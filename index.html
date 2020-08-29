@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<style>
+			.header {
+				background-image: url("img/bg@2x.png");
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="header">
+				<div class="tabs">
+					<div class="header-left">
+						<img src="img/logo.png" style="margin-left: 35px;margin-top: 7px;margin-right: 12px;" />
+						<span class="gps">
+							<img src="img/gps.png" />
+							<span class="address"></span>
+						</span>
+					</div>
+					<div style="flex: 1;">
+						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+							<li class="nav-item" role="presentation">
+								<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+								 aria-selected="true">案联导航</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" title="敬请期待!" id="pills-profile-tab">法律论坛</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" href="http://case.caselink.cn/">工作台</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header-right">
+						<a href="setIndex.html" style="margin-right: 30px;" target="_blank">设为首页</a>
+						<a href="http://case.caselink.cn/" target="_blank">登录</a>&nbsp; / &nbsp;
+						<a href="http://case.caselink.cn/" target="_blank">注册</a>
+					</div>
+				</div>
+				<div style="text-align: center;">
+					<div>
+						<img src="img/left.png" class="left-images" />
+
+						<div class="input-group" style="margin-left: 17.8%;width: 76%;">
+							<!-- <div class="input-group-prepend">
+								<button class="btn btn-outline-secondary dropdown-toggle btn-select" type="button" data-toggle="dropdown"
+								 aria-haspopup="true" aria-expanded="true">百度</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">百度</a>
+									<a class="dropdown-item" href="#">无讼案例</a>
+									<a class="dropdown-item" href="#">搜狗微信</a>
+									<a class="dropdown-item" href="#">搜狗知乎</a>
+								</div>
+							</div> -->
+							<select class="form-control" style="height: 50px;max-width: 110px;" id="searchType">
+								<option value="baidu">百度</option>
+								<option value="wusong">无讼案例</option>
+								<option value="weixin">搜狗微信</option>
+								<option value="zhihu">搜狗知乎</option>
+							</select>
+							<input type="text" id="searchContent" class="form-control" aria-label="Text input with dropdown button" style="height: 50px;"
+							 placeholder="">
+							<div class="input-group-append" style="height: 50px;width: 120px;">
+								<button class="btn btn-search" type="button" id="search">搜索</button>
+							</div>
+							<img src="img/right.png" class="right-images" />
+							<a class="lrp" href="http://www.chinamoney.com.cn/chinese/bklpr/" target="_blank">最新贷款市场报价利率（LPR）</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main" style="margin-top: 10px;">
+				<div class="row">
+					<div class="col col-md-2">
+						<div class="nav flex-column nav-pills left" id="v-pills-tab">
+							<a class="nav-link active" href="#v-pills-home">综合检索</a>
+							<a class="nav-link" href="#v-pills-profile">观点/模版</a>
+							<a class="nav-link" href="#v-pills-settings">其他检索</a>
+							<a class="nav-link" href="#v-pills-messages">实务学习</a>
+						</div>
+					</div>
+					<div class="col col-md-9 panel-body">
+						<div class="tab-content" id="v-pills-home">
+							<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+								<div class="type-title">
+									综合搜索
+								</div>
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="https://www.itslaw.com/home" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/wusong.png">
+											<span class="link-title">无讼案例<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="法律行业使用最多的免费案例、法律法规检索工具">法律行业使用最多的免费案例、法律法规检索工具</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://www.chineselaw.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/ydzk.png">
+											<span class="link-title"><span class="tag-title"></span>元典智库</span>
+											<span class="link-info" title="特色功能，法官怎么判，刑事案件">特色功能，法官怎么判，刑事案件</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="http://wenshu.court.gov.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/rmfy.png">
+											<span class="link-title">裁判文书网<span class="tag-title"></span></span>
+											<span class="link-info" title="官方法律文书检索网站">官方法律文书检索网站</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="http://search.chinalaw.gov.cn/search2.html" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/rmfy.png">
+											<span class="link-title">法律法规信息库<span class="tag-title"></span></span>
+											<span class="link-info" title="中华人民共和国司法部运营的法律法规检索网站">中华人民共和国司法部运营的法律法规检索网站</span>
+										</a>
+									</dd>
+								</dl>
+
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="http://www.law-star.com" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/lzx.png">
+											<span class="link-title">律之星<span class="tag-title"></span></span>
+											<span class="link-info" title="专业的法律法规检索系统">专业的法律法规检索系统</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="http://hk.lexiscn.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/lsw.png">
+											<span class="link-title">律商网<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="律商网是律商联讯集团">法律行业使用最多的免费案例、法律法规检索工具</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="http://www.pkulaw.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/bdfb.png">
+											<span class="link-title">北大法宝<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="北京大学法制信息中心与北大英华科技联合推出的智…">北京大学法制信息中心与北大英华科技联合推出的智…</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://law.wkinfo.com.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/wkxx.png">
+											<span class="link-title">威科先行<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="法律法规更新速度和内容准确性能都在行业前列，但收费网站">法律法规更新速度和内容准确性能都在行业前列，但收费网站</span>
+										</a>
+									</dd>
+								</dl>
+							</div>
+						</div>
+
+						<div class="tab-content" id="v-pills-profile">
+							<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+								<div class="type-title">
+									观点/模板
+								</div>
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="https://www.fatianshi.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/fts.png">
+											<span class="link-title">法天使<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="法律行业使用最多的免费案例、法律法规案例">法律行业使用最多的免费案例、法律法规案例</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://www.66law.cn/contractmodel/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/shenjiaosuo.png">
+											<span class="link-title"><span class="tag-title"></span>华律合同模版</span>
+											<span class="link-info" title="特色功能，法官怎么判，刑事案件">特色功能，法官怎么判，刑事案件</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://weixin.sogou.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/winxin.png">
+											<span class="link-title"><span class="tag-title"></span>微信搜索</span>
+											<span class="link-info" title="官方法律文书检索网站">官方法律文书检索网站</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://zhihu.sogou.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/zh.png">
+											<span class="link-title"><span class="tag-title"></span>知乎搜索</span>
+											<span class="link-info" title="中华人民共和国司法部运营的法律法规检索网站">中华人民共和国司法部运营的法律法规检索网站</span>
+										</a>
+									</dd>
+								</dl>
+							</div>
+						</div>
+
+						<div class="tab-content" id="v-pills-settings">
+							<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+								<div class="type-title">
+									其他检索
+								</div>
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="http://www.gsxt.gov.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/gjgsgx.png">
+											<span class="link-title">国家企业信用信息公示系统<span class="tag-title-xing">★</span></span>
+											<span class="link-info" title="国家企业信用信息公示系统">国家企业信用信息公示系统</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://www.qixin.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/qxb.png">
+											<span class="link-title">启信宝<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="第三方的企业信息检索">第三方的企业信息检索</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="第三方的企业信息检索" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/qcc.png">
+											<span class="link-title">企查查<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="第三方的企业信息检索">第三方的企业信息检索</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="ttps://www.tianyancha.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/tyc.png">
+											<span class="link-title">天眼查<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="">第三方的企业信息检索</span>
+										</a>
+									</dd>
+								</dl>
+
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="http://zxgk.court.gov.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/sbzx.png">
+											<span class="link-title"><span class="tag-title"></span>被执行人信息</span>
+											<span class="link-info" title="被执行人信息公开网">被执行人信息公开网</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://rmfygg.court.gov.cn/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/rmfyggw.png">
+											<span class="link-title">人民法院公告网<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="官方传票、判决、破产等公告查询网站">官方传票、判决、破产等公告查询网站</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://sf.taobao.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/sfpmw.png">
+											<span class="link-title">司法拍卖-淘宝<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="第三方的企业信息检索">第三方的企业信息检索</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://auction.jd.com/sifa.html" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/jdpm.png">
+											<span class="link-title">司法拍卖-京东<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="法院指定的资产处置网站">法院指定的资产处置网站</span>
+										</a>
+									</dd>
+								</dl>
+							</div>
+						</div>
+
+						<div class="tab-content" id="v-pills-messages">
+							<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+								<div class="type-title">
+									实务学习
+								</div>
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="http://www.zfwx.com/wxqt/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/dqw.png">
+											<span class="link-title">点睛网<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="有网页端和手机端，虽然收费，但部分地区律协会集中采购，内容中规中矩，界面不美观，但部分课程内容还可以">有网页端和手机端，虽然收费，但部分地区律协会集中采购，内容中规中矩，界面不美观，但部分课程内容还可以</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="http://www.ehuashui.com/pcweb/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/hsxy.png">
+											<span class="link-title">华税学院<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="微信搜索公众号华税学院，税务律师的摇篮，课程质量不错，主要针对于税务律师，专业性强">微信搜索公众号华税学院，税务律师的摇篮，课程质量不错，主要针对于税务律师，专业性强</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://www.zhi10.com" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/zsw.png">
+											<span class="link-title">智拾网<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="智合法律出品的法律学习网站">智合法律出品的法律学习网站</span>
+										</a>
+									</dd>
+									<dd class="col-sm-3">
+										<a href="https://www.zhi10.com" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/zyfl.png">
+											<span class="link-title">智元法律<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="微信搜索公众号智元法律课堂，内容较全面，课程质量较高">微信搜索公众号智元法律课堂，内容较全面，课程质量较高</span>
+										</a>
+									</dd>
+								</dl>
+
+								<dl class="row">
+									<dd class="col-sm-3">
+										<a href="https://tianjin.99lvka.com/" target="_blank">
+											<i class="link-logo"></i>
+											<img src="img/lfdt.png">
+											<span class="link-title">劳动法讲习所<span class="tag-title-money">¥</span></span>
+											<span class="link-info" title="国内首个专业员工关系法律服务品牌">国内首个专业员工关系法律服务品牌</span>
+										</a>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="col col-md-2"></div>
+				</div>
+			</div>
+			<div class="my-links">
+				<div class="my-links-btn">
+					<i class="fa fa-plus" style="margin-left: 8px;"></i>
+					<span style="font-size: 12px;display: block;">自定义</span>
+				</div>
+				<div class="">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="nav-item">
+							<a class="nav-link active" id="links" data-toggle="tab" href="#my-links" role="tab" aria-controls="home"
+							 aria-selected="true">我的链接</a>
+						</li>
+						<li role="presentation">
+							<a class="nav-link" id="history" data-toggle="tab" href="#my-history" role="tab" aria-controls="my-history"
+							 aria-selected="true">最近访问</a>
+						</li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="my-links" aria-labelledby="links">
+							<a href="javascript:;" class="fa fa-plus"></a>
+							<div class="my-links-box">
+								<div class="my-links-content">
+									<form class="my-link-form form-group" action="javascript:;" style="display:none">
+										<input type="text" class="fm-add-name form-control" placeholder="网站名称" required>
+										<input type="url" class="fm-add-url form-control" value="http://" required>
+										<button type="submit" class="btn btn-primary btn-sm">添加</button>
+										<button type="button" class="btn-close-fm btn btn-default btn-sm">取消</button>
+									</form>
+									<ul class="my-link-list">
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="my-history" aria-labelledby="history">
+							<div class="my-links-box">
+								<div class="my-links-content">
+									<ul class="my-link-list recent-items">
+									</ul>
+									<div class="text-center pd-v">
+										<small>显示最近 15 个访问记录</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #0F5EE8;color: #fff;text-align: center;font-size: 12px;height: 80px;">
+			<div style="height: 40px;line-height: 40px;">案联网 法律人工作方式新提案</div>
+			<div>© 2020 案联网 BETA 1.0 All Right Reserved. 备案</div>
+		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="js/perfect-scrollbar.jquery.min.js"></script>
+		<script src="js/Sortable.min.js"></script>
+		<script src="js/hao-full.js"></script>
+		<script src="http://pv.sohu.com/cityjson" type="text/ecmascript"></script>
+		<script>
+			$(".col-sm-3").hover(function() {
+				$(this).find('.link-title').css('color', '#0052D8')
+				$(this).find('.tag-title-money').text('付费')
+				$(this).find('.tag-title-xing').text('常用')
+				$(this).find('.tag-title').text('部分付费')
+			}, function() {
+				$(this).find('.link-title').css('color', '#666666')
+				$(this).find('.tag-title-money').text('¥')
+				$(this).find('.tag-title-xing').text('★')
+				$(this).find('.tag-title').text('★')
+			});
+
+			$('#search').on('click', function() {
+				var type = $('#searchType').val();
+				var s = $('#searchContent').val();
+				if (s) {
+					if (type == 'baidu') {
+						window.open('https://www.baidu.com/s?wd=' + s);
+					}
+
+					if (type == 'wusong') {
+						window.open(
+							'https://www.itslaw.com/search?initialization=%7B%22category%22%3A%22CASE%22%2C%22filterList%22%3A%5B%7B%22type%22%3A%22searchWord%22%2C%22category%22%3A%22%E6%90%9C%E7%B4%A2%E8%AF%8D%22%2C%22value%22%3A%22' +
+							s + '%22%2C%22searchType%22%3A1%2C%22label%22%3A%22' + s + '%22%2C%22id%22%3A%22' + s + '%22%7D%5D%7D')
+					}
+
+					if (type == 'weixin') {
+						window.open('https://weixin.sogou.com/weixin?type=2&query=' + s);
+					}
+
+					if (type == 'zhihu') {
+						window.open(
+							'https://www.sogou.com/sogou?pid=sogou-wsse-ff111e4a5406ed40&insite=zhihu.com&p=40351207&ie=utf8&query=' +
+							s + '&&p=40351207&ie=utf8&query=' + s + '&');
+					}
+				}
+			})
+
+			$(document).keydown(function(event) {
+				var type = $('#searchType').val();
+				var s = $('#searchContent').val();
+				if (event.keyCode == 13) {
+					if (s) {
+						if (type == 'baidu') {
+							window.open('https://www.baidu.com/s?wd=' + s);
+						}
+
+						if (type == 'wusong') {
+							window.open(
+								'https://www.itslaw.com/search?initialization=%7B%22category%22%3A%22CASE%22%2C%22filterList%22%3A%5B%7B%22type%22%3A%22searchWord%22%2C%22category%22%3A%22%E6%90%9C%E7%B4%A2%E8%AF%8D%22%2C%22value%22%3A%22' +
+								s + '%22%2C%22searchType%22%3A1%2C%22label%22%3A%22' + s + '%22%2C%22id%22%3A%22' + s + '%22%7D%5D%7D')
+						}
+
+						if (type == 'weixin') {
+							window.open('https://weixin.sogou.com/weixin?type=2&query=' + s);
+						}
+
+						if (type == 'zhihu') {
+							window.open(
+								'https://www.sogou.com/sogou?pid=sogou-wsse-ff111e4a5406ed40&insite=zhihu.com&p=40351207&ie=utf8&query=' +
+								s + '&&p=40351207&ie=utf8&query=' + s + '&');
+						}
+
+					}
+
+				}
+			});
+
+			$(document).ready(function() {
+				$('.rrr').click(function() {
+					$('body').toggleClass('simple');
+				});
+
+			});
+
+			//导航上的搜索选择
+			(function($) {
+
+				var data = {
+					key: "VTVBZ-JGC64-YHMUT-DMFUB-R3UKT-V3FF4"
+				}
+				var url = "https://apis.map.qq.com/ws/location/v1/ip";
+				data.output = "jsonp";
+				$.ajax({
+					type: "get",
+					dataType: 'jsonp',
+					data: data,
+					jsonp: "callback",
+					jsonpCallback: "QQmap",
+					url: url,
+					success: function(json) {
+						$('.address').text(json.result.ad_info.city)
+					},
+					error: function(err) {
+
+					}
+
+				});
+
+				var m = $('.primary-menus');
+				if (m.length < 1) return;
+				var ul = m.find('.selects');
+				if (ul.length < 1) return;
+				var lis = ul.children('li');
+				if (lis.length < 1) return;
+				var s = m.find('.search');
+				var sVal = s.find('.s').val();
+				lis.on('click', function() {
+					var d = $(this).attr('data-target');
+					if (d) {
+						lis.removeClass('current');
+						$(this).addClass('current');
+						s.addClass('hidden');
+						s.filter('#' + d).removeClass('hidden');
+						//s.filter('#'+d).find('.s').val('');
+						s.filter('#' + d).find('.s').trigger('focusin');
+					}
+				});
+				s.find('.s').on('focusin', function() {
+					if ($(this).val() == sVal) {
+						$(this).val('');
+					}
+				})
+				s.find('.s').on('focusout', function() {
+					var v = $(this).val();
+					s.find('.s').val(v);
+				})
+			})(jQuery);
+		</script>
+		<span class="none">
+			<script>
+				var _hmt = _hmt || [];
+				(function() {
+					var hm = document.createElement("script");
+					hm.src = "https://hm.baidu.com/hm.js?8f1b3ec54683e16bc325c60f82329c9d";
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(hm, s);
+				})();
+			</script>
+
+			<script>
+				(function() {
+					var bp = document.createElement('script');
+					var curProtocol = window.location.protocol.split(':')[0];
+					if (curProtocol === 'https') {
+						bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+					} else {
+						bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+					}
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6413037-2"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				gtag('js', new Date());
+				gtag('config', 'UA-6413037-2');
+			</script>
+
+		</span>
+		<div style="display: none;">
+			<script type="text/javascript" src="//js.users.51.la/20808609.js"></script>
+		</div>
+	</body>
+</html>
