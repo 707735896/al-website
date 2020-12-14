@@ -81,10 +81,10 @@
 				<div class="row">
 					<div class="col col-md-2">
 						<div class="nav flex-column nav-pills left" id="v-pills-tab">
-							<a class="nav-link active" href="#v-pills-home">综合检索</a>
-							<a class="nav-link" href="#v-pills-profile">观点/模版</a>
-							<a class="nav-link" href="#v-pills-settings">其他检索</a>
-							<a class="nav-link" href="#v-pills-messages">实务学习</a>
+							<a class="nav-link active jump" href="#v-pills-home">综合检索</a>
+							<a class="nav-link jump" href="#v-pills-profile">观点/模版</a>
+							<a class="nav-link jump" href="#v-pills-settings">其他检索</a>
+							<a class="nav-link jump" href="#v-pills-messages">实务学习</a>
 						</div>
 					</div>
 					<div class="col col-md-9 panel-body">
@@ -604,7 +604,7 @@
 		<script src="js/hao-full.js"></script>
 		<script src="http://pv.sohu.com/cityjson" type="text/ecmascript"></script>
 		<script>
-			$(".nav-link").on("click touch", function() {
+			$(".jump").on("click touch", function() {
 				console.log($(this));
 				//根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
 				$('html,body').animate({
